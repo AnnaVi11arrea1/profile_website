@@ -1,0 +1,73 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.top {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+/*==============
+TABS
+===============*/
+
+.hidden {
+    display: none;
+}
+
+.dots {
+	height: 25vh;
+	/* max-height: 600px; */
+	width: 1000px;
+	background-color: hsla(200,40%,30%,.4);
+	background-image:		
+		url('stack.png'),
+		url('trees.png'),
+		url('pyramid.jpeg'),
+		url('dance.jpeg');
+	background-repeat: repeat-x;
+	background-position: 
+		100% 100%,
+		100% 100%,
+		0 50%,
+		0 0;
+	background-size: 
+
+		800px,
+		500px 200px,
+		1000px,
+		400px 260px;
+	animation: 40s para infinite linear;
+	}
+
+@keyframes para {
+	100% {
+		background-position: 
+        -3000px 100%,
+			-500px 100%,
+			500px 50%,
+			1000px 100%;
+			
+		}
+	}
