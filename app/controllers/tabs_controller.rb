@@ -1,4 +1,4 @@
 class TabsController < ApplicationController
-  def index 
+  def index
   end
 end
