@@ -2,18 +2,28 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    color:rgb(209, 152, 255);
+    background-color:rgb(0, 0, 0);
+    margin: 0 auto;
     flex-wrap: wrap;
 }
 
 .top {
     background-color: #333;
-    color: #fff;
+    color: #000;
     padding: 10px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    box-shadow: inset -7px -3px 10px 10px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    align-self: center;
+    padding-left: 20px;
 }
 
 .footer {
@@ -39,7 +49,7 @@ TABS
 .dots {
 	height: 25vh;
 	/* max-height: 600px; */
-	width: 1000px;
+	width: 100%;
 	background-color: hsla(200,40%,30%,.4);
 	background-image:		
 		url('stack.png'),
@@ -71,3 +81,76 @@ TABS
 			
 		}
 	}
+
+/*==============
+BUTTONS
+===============*/
+
+.btn {
+    display: flex;
+    flex-shrink: 1;
+    justify-content: center;
+    border: 1px solid lime;
+    color: black;
+    background-image: linear-gradient(rgb(209, 0, 236),rgb(170, 65, 255) ,rgb(44, 169, 252),rgb(51, 253, 118),rgb(0, 103, 129),rgb(37, 0, 71) );
+    border-radius: 10px;
+    padding: 9px 13px;
+    margin: 3px;
+    font-size: 20px;
+    &:hover {
+        cursor: pointer;
+        border: 5px solidrgb(98, 48, 190);
+        background-image: linear-gradient(rgb(209, 0, 236),rgb(255, 131, 65) ,rgb(235, 252, 44),rgb(51, 253, 118),rgb(235, 252, 44),rgb(255, 131, 65) , rgb(209, 0, 236));
+    }
+}
+
+.btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/*==============
+CARDS
+===============*/
+
+.mycard {
+    display: flex;
+    flex-basis: 20%;
+    min-width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(150, 0, 250);
+    border: 1px solid rgb(131, 0, 143);
+}
+
+.mycard img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*==============
+IMAGE GALLERY
+===============*/
+
+.gallery-image{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
