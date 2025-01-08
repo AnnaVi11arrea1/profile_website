@@ -8,6 +8,10 @@ body {
     flex-wrap: wrap;
 }
 
+p{
+    font-size: 20px;
+}
+
 .top {
     background-color: #333;
     color: #000;
@@ -20,12 +24,15 @@ body {
 
 .name {
     box-shadow: inset 0px 15px 10px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
     height: 70%;
     width: 75%;
-    min-height: 150px;
-    min-width: 400px;
+    min-height: 125px;
+    min-width: 325px;
     max-width: 1000px;
     padding-left: 7%;
+    margin-bottom: 20px;
+    
 }
 
 .footer {
@@ -48,7 +55,6 @@ TABS
 
 .dots {
 	height: 25vh;
-	/* max-height: 600px; */
 	width: 100%;
 	background-color: hsla(200,40%,30%,.4);
 	background-image:		
@@ -63,7 +69,6 @@ TABS
 		0 50%,
 		0 0;
 	background-size: 
-
 		800px,
 		500px 200px,
 		1000px,
@@ -90,13 +95,16 @@ BUTTONS
     display: flex;
     flex-shrink: 1;
     justify-content: center;
-    border: 1px solid lime;
+    box-shadow: inset 0px 0px 15px 5px rgb(58, 0, 134);
+    border-top: 2px solid lime;
+    border-bottom: 2px solid rgb(44, 0, 80);
     color: black;
-    background-image: linear-gradient(rgb(209, 0, 236),rgb(170, 65, 255) ,rgb(44, 169, 252),rgb(51, 253, 118),rgb(0, 103, 129),rgb(37, 0, 71) );
+    background-image: linear-gradient(rgb(170, 65, 255) ,rgb(44, 169, 252),rgb(51, 253, 118),rgb(0, 103, 129),rgb(37, 0, 71) );
     border-radius: 10px;
-    padding: 9px 13px;
+    padding: 15px 18px;
     margin: 3px;
     font-size: 20px;
+    font-weight: bold;
     &:hover {
         cursor: pointer;
         border: 5px solidrgb(98, 48, 190);
@@ -104,11 +112,16 @@ BUTTONS
     }
 }
 
+.btn:active{
+    transform: translateY(3px);
+    box-shadow: 0 0 10px 5px hsl(276, 100.00%, 75.50%);
+}
+
 .btn-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 /*==============
@@ -117,18 +130,73 @@ CARDS
 
 .mycard {
     display: flex;
-    flex-basis: 20%;
-    min-width: 300px;
+    position: relative;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+    min-width: 230px;
+    max-width: 350px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    align-self: center;
+    background-color: rgb(105, 105, 105);
     color: #fff;
-    padding: 20px;
+    padding: 70px;
     margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 5px rgb(150, 0, 250);
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(98, 0, 255);
     border: 1px solid rgb(131, 0, 143);
+    background-image: url("border.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    animation: flipInX 1s;
+}
+
+.mycard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(234, 0, 255), rgb(89, 0, 255), rgba(17, 0, 255, 0.5), rgb(0, 238, 255),  rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 153, 0), rgb(255, 0, 255));
+    opacity: 0;
+    mix-blend-mode: screen; /* Works well with transparency */
+    z-index: 1;
+    transition: opacity 0.3s ease; /* Smooth transition for hover */
+}
+
+.mycard:hover {
+    background-color: black;
+    box-shadow: 0 0 5px 5px rgb(255, 255, 255);
+}
+
+.mycard:hover::after {
+    mask-image: url('border.png'); /* Mask with PNG */
+    mask-size: cover; /* Ensure the mask covers the area */
+    -webkit-mask-image: url('border.png'); /* For Safari */
+    -webkit-mask-size: 100% 100%; /* For Safari */
+    opacity: 1; /* Make the gradient visible on hover */
+    animation: flashGradient 2s infinite;
+
+}
+
+@keyframes flashGradient {
+    0% {
+        opacity: 0.2;
+        background-position: 0% 0%;
+    }
+    50% {
+        opacity: 1;
+        background-position: 50% 50%;
+    }
+    100% {
+        opacity: 0.2;
+        background-position: 100% 100%;
+        }
 }
 
 .mycard img {
@@ -137,6 +205,19 @@ CARDS
     border-radius: 10px;
 }
 
+.text-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-top: 1px solid lime;
+    border-left: 1px solid rgb(0, 255, 242);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 50px;
+}
 /*==============
 IMAGE GALLERY
 ===============*/
@@ -144,7 +225,6 @@ IMAGE GALLERY
 .gallery-image{
     width: 100%;
     height: auto;
-    margin: 10px;
     border-radius: 10px;
 }
 
@@ -153,4 +233,21 @@ IMAGE GALLERY
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
+}
+
+/*==============
+LOGO
+===============*/
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 20px;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    background-image: radial-gradient( rgb(150, 0, 250), transparent);
+    padding: 10px;
+    animation: fadeIn .5s;
 }
